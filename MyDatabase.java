@@ -2,17 +2,17 @@ import java.io.*;
 import java.util.*;
 
 public class MyDatabase {
-	static Map<Integer, Long> id = new TreeMap<>();
-	static Map<String, ArrayList<Long>> company = new TreeMap<>();
-	static Map<String, ArrayList<Long>> drug_id = new TreeMap<>();
-	static Map<Short, ArrayList<Long>> trials = new TreeMap<>();
-	static Map<Short, ArrayList<Long>> patients = new TreeMap<>();
-	static Map<Short, ArrayList<Long>> dosage_mg = new TreeMap<>();
-	static Map<Float, ArrayList<Long>> reading = new TreeMap<>();
-	static Map<Boolean, ArrayList<Long>> double_blind = new TreeMap<>();
-	static Map<Boolean, ArrayList<Long>> controlled_study = new TreeMap<>();
-	static Map<Boolean, ArrayList<Long>> govt_funded = new TreeMap<>();
-	static Map<Boolean, ArrayList<Long>> fda_approved = new TreeMap<>();
+	static Map<Integer, Long> id = new HashMap<>();
+	static Map<String, ArrayList<Long>> company = new HashMap<>();
+	static Map<String, ArrayList<Long>> drug_id = new HashMap<>();
+	static Map<Short, ArrayList<Long>> trials = new HashMap<>();
+	static Map<Short, ArrayList<Long>> patients = new HashMap<>();
+	static Map<Short, ArrayList<Long>> dosage_mg = new HashMap<>();
+	static Map<Float, ArrayList<Long>> reading = new HashMap<>();
+	static Map<Boolean, ArrayList<Long>> double_blind = new HashMap<>();
+	static Map<Boolean, ArrayList<Long>> controlled_study = new HashMap<>();
+	static Map<Boolean, ArrayList<Long>> govt_funded = new HashMap<>();
+	static Map<Boolean, ArrayList<Long>> fda_approved = new HashMap<>();
 	static ArrayList<Long> offset = null;
 
 	public static void main(String[] args) {
@@ -48,7 +48,7 @@ public class MyDatabase {
 
 			// Make a query on selected attribute
 			else if (input == 2) {
-				System.out.println("Please type the select query, i.e. SELECT FROM data.db WHERE id <= 10 ");
+				System.out.println("Please type the delete query, i.e. SELECT FROM data.db WHERE id <= 10 ");
 				Scanner scanner2 = new Scanner(System.in);
 				String deleteCommand = scanner2.nextLine();
 				if (deleteCommand.startsWith("SELECT FROM data.db WHERE ")) {
@@ -221,7 +221,7 @@ public class MyDatabase {
 				Boolean var11 = Boolean.parseBoolean(value[10]);
 
 				id.put(var1, pointer);
-				// store in the treemap data structure in a sorted order
+				// store in the HashMap<>() data structure in a sorted order
 				if (company.containsKey(value[1]))
 					offset = company.get(value[1]);
 				else
@@ -315,17 +315,17 @@ public class MyDatabase {
 			}
 			dbFile.close();
 
-			id = new TreeMap<>(id);
-			company = new TreeMap<>(company);
-			drug_id = new TreeMap<>(drug_id);
-			trials = new TreeMap<>(trials);
-			patients = new TreeMap<>(patients);
-			dosage_mg = new TreeMap<>(dosage_mg);
-			reading = new TreeMap<>(reading);
-			double_blind = new TreeMap<>(double_blind);
-			controlled_study = new TreeMap<>(controlled_study);
-			govt_funded = new TreeMap<>(govt_funded);
-			fda_approved = new TreeMap<>(fda_approved);
+			id = new HashMap<>(id);
+			company = new HashMap<>(company);
+			drug_id = new HashMap<>(drug_id);
+			trials = new HashMap<>(trials);
+			patients = new HashMap<>(patients);
+			dosage_mg = new HashMap<>(dosage_mg);
+			reading = new HashMap<>(reading);
+			double_blind = new HashMap<>(double_blind);
+			controlled_study = new HashMap<>(controlled_study);
+			govt_funded = new HashMap<>(govt_funded);
+			fda_approved = new HashMap<>(fda_approved);
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -499,17 +499,17 @@ public class MyDatabase {
 			dbFile.writeBytes("\n");
 			dbFile.close();
 
-			id = new TreeMap<>(id);
-			company = new TreeMap<>(company);
-			drug_id = new TreeMap<>(drug_id);
-			trials = new TreeMap<>(trials);
-			patients = new TreeMap<>(patients);
-			dosage_mg = new TreeMap<>(dosage_mg);
-			reading = new TreeMap<>(reading);
-			double_blind = new TreeMap<>(double_blind);
-			controlled_study = new TreeMap<>(controlled_study);
-			govt_funded = new TreeMap<>(govt_funded);
-			fda_approved = new TreeMap<>(fda_approved);
+			id = new HashMap<>(id);
+			company = new HashMap<>(company);
+			drug_id = new HashMap<>(drug_id);
+			trials = new HashMap<>(trials);
+			patients = new HashMap<>(patients);
+			dosage_mg = new HashMap<>(dosage_mg);
+			reading = new HashMap<>(reading);
+			double_blind = new HashMap<>(double_blind);
+			controlled_study = new HashMap<>(controlled_study);
+			govt_funded = new HashMap<>(govt_funded);
+			fda_approved = new HashMap<>(fda_approved);
 			System.out.println("Insert command executed!");
 		} catch (Exception e) {
 			e.printStackTrace();
