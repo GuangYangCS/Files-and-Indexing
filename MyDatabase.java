@@ -48,7 +48,7 @@ public class MyDatabase {
 
 			// Make a query on selected attribute
 			else if (input == 2) {
-				System.out.println("Please type the delete query, i.e. SELECT FROM data.db WHERE id <= 10 ");
+				System.out.println("Please type the select query, i.e. SELECT FROM data.db WHERE id <= 10 ");
 				Scanner scanner2 = new Scanner(System.in);
 				String deleteCommand = scanner2.nextLine();
 				if (deleteCommand.startsWith("SELECT FROM data.db WHERE ")) {
