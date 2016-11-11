@@ -2,17 +2,17 @@ import java.io.*;
 import java.util.*;
 
 public class MyDatabase {
-	static Map<Integer, Long> id = new HashMap<>();
-	static Map<String, ArrayList<Long>> company = new HashMap<>();
-	static Map<String, ArrayList<Long>> drug_id = new HashMap<>();
-	static Map<Short, ArrayList<Long>> trials = new HashMap<>();
-	static Map<Short, ArrayList<Long>> patients = new HashMap<>();
-	static Map<Short, ArrayList<Long>> dosage_mg = new HashMap<>();
-	static Map<Float, ArrayList<Long>> reading = new HashMap<>();
-	static Map<Boolean, ArrayList<Long>> double_blind = new HashMap<>();
-	static Map<Boolean, ArrayList<Long>> controlled_study = new HashMap<>();
-	static Map<Boolean, ArrayList<Long>> govt_funded = new HashMap<>();
-	static Map<Boolean, ArrayList<Long>> fda_approved = new HashMap<>();
+	static Map<Integer, Long> id = new TreeMap<>();
+	static Map<String, ArrayList<Long>> company = new TreeMap<>();
+	static Map<String, ArrayList<Long>> drug_id = new TreeMap<>();
+	static Map<Short, ArrayList<Long>> trials = new TreeMap<>();
+	static Map<Short, ArrayList<Long>> patients = new TreeMap<>();
+	static Map<Short, ArrayList<Long>> dosage_mg = new TreeMap<>();
+	static Map<Float, ArrayList<Long>> reading = new TreeMap<>();
+	static Map<Boolean, ArrayList<Long>> double_blind = new TreeMap<>();
+	static Map<Boolean, ArrayList<Long>> controlled_study = new TreeMap<>();
+	static Map<Boolean, ArrayList<Long>> govt_funded = new TreeMap<>();
+	static Map<Boolean, ArrayList<Long>> fda_approved = new TreeMap<>();
 	static ArrayList<Long> offset = null;
 
 	public static void main(String[] args) {
